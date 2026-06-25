@@ -20,7 +20,8 @@ const Hero = () => {
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), url('/images/hero.webp')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: "fixed",
+          // backgroundAttachment: "fixed",
+          backgroundAttachment: { xs: "scroll", md: "fixed" },
         }}
       >
         <Container maxWidth="xl">
