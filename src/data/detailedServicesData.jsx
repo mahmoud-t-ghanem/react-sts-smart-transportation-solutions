@@ -49,10 +49,8 @@ export const detailedServicesData = [
     ],
     storyData: {
       title: "Our Story",
-      capabilitiesImage:
-        "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=600&auto=format&fit=crop",
-      coverageImage:
-        "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=600&auto=format&fit=crop",
+      capabilitiesImage: "/images/our-story-1.webp",
+      coverageImage: "/images/our-story-2.webp",
       capabilitiesList: [
         "Regional & OTR Linehaul: fixed blocks, ad-hoc assignments, and recovery loads",
         "Drop-and-Hook Programs: pre-staged trailers, yard coordination, seal integrity checks",

@@ -33,7 +33,6 @@ const EstimateDialog = () => {
   const [loading, setLoading] = useState(false);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
 
-  // تجميع حالات الأخطاء ونصوص المساعدة لجميع الحقول
   const [errors, setErrors] = useState({
     name: false,
     email: false,
@@ -344,7 +343,6 @@ const EstimateDialog = () => {
               sx={textFieldStyles}
             />
 
-            {/* قسم المرفقات */}
             <Box sx={{ mt: 0.5 }}>
               <Button
                 component="label"

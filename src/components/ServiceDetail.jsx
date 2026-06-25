@@ -6,6 +6,7 @@ import { useTheme } from "@mui/material/styles";
 import AcUnitIcon from "@mui/icons-material/AcUnit";
 import { detailedServicesData } from "../data/detailedServicesData";
 import { blueGrey } from "@mui/material/colors";
+import CheckCircleOutlinedIcon from "@mui/icons-material/CheckCircleOutlined";
 
 const ServiceDetail = ({ id }) => {
   const theme = useTheme();
@@ -25,12 +26,11 @@ const ServiceDetail = ({ id }) => {
 
   return (
     <Box sx={{ width: "100%", backgroundColor: blueGrey[800] }}>
-      {/* --- القسم العلوي الرئيسي للخدمة --- */}
       <Box
         sx={{
           width: "100%",
-          pt: { xs: 12, md: 18 },
-          pb: { xs: 4, md: 6 },
+          pt: { xs: 7, md: 10 },
+          pb: { xs: 7, md: 10 },
           position: "relative",
           overflow: "hidden",
           display: "flex",
@@ -52,13 +52,11 @@ const ServiceDetail = ({ id }) => {
         )}
 
         <Container maxWidth="xl" sx={{ position: "relative", zIndex: 2 }}>
-          {/* تم استخدام container وتمرير alignItems داخل الـ sx لمنع تحذيرات الـ DOM */}
           <Grid
             container
             spacing={{ xs: 4, md: 6 }}
             sx={{ alignItems: "center" }}
           >
-            {/* العمود الأيسر: النصوص والمميزات (يأخذ نصف الشاشة 6/12 في الشاشات الكبيرة md) */}
             <Grid size={{ xs: 12, md: 6 }}>
               <Box
                 sx={{ display: "flex", alignItems: "center", gap: 1.5, mb: 2 }}
@@ -171,7 +169,6 @@ const ServiceDetail = ({ id }) => {
               )}
             </Grid>
 
-            {/* العمود الأيمن: كرت الصورة (بجانب النص تماماً في الشاشات الكبيرة md) */}
             <Grid size={{ xs: 12, md: 6 }}>
               <Box
                 sx={{
@@ -201,15 +198,15 @@ const ServiceDetail = ({ id }) => {
           </Grid>
         </Container>
       </Box>
-
-      {/* --- رندرة شرطية لسكشن Our Story في حال وجوده بالداتا --- */}
       {story && (
         <Box
+          component="section"
           sx={{
             backgroundColor: blueGrey[800],
             width: "100%",
-            pt: { xs: 4, md: 6 },
-            pb: { xs: 8, md: 12 },
+            pt: { xs: 8, md: 12 },
+            pb: { xs: 10, md: 14 },
+            borderTop: "1px solid rgba(255, 255, 255, 0.02)",
           }}
         >
           <Container maxWidth="xl">
@@ -219,7 +216,8 @@ const ServiceDetail = ({ id }) => {
                 textAlign: "center",
                 fontWeight: 900,
                 color: theme.palette.text.primary,
-                mb: { xs: 5, md: 6 },
+                mb: { xs: 6, md: 10 },
+                letterSpacing: "0.5px",
               }}
             >
               {story.title}
@@ -227,149 +225,203 @@ const ServiceDetail = ({ id }) => {
 
             <Grid
               container
-              spacing={{ xs: 6, md: 8 }}
+              spacing={{ xs: 6, md: 10 }}
               sx={{ justifyContent: "center" }}
             >
-              {/* Core Capabilities */}
               <Grid size={{ xs: 12, md: 6 }}>
                 <Box
-                  component="img"
-                  src={story.capabilitiesImage}
-                  alt="Core Capabilities"
                   sx={{
-                    width: "100%",
-                    height: "250px",
-                    objectFit: "cover",
-                    borderRadius: "8px",
-                    mb: 3,
-                    boxShadow: "0px 10px 30px rgba(0,0,0,0.5)",
-                  }}
-                />
-                <Typography
-                  variant="h5"
-                  sx={{
-                    color: theme.palette.text.primary,
-                    fontWeight: 800,
-                    mb: 2.5,
-                    textAlign: "center",
-                  }}
-                >
-                  Core Capabilities
-                </Typography>
-                <Box
-                  component="ul"
-                  sx={{
-                    p: 0,
-                    m: 0,
-                    pl: 2,
                     display: "flex",
                     flexDirection: "column",
-                    gap: 1.5,
+                    alignItems: "center",
+                    height: "100%",
                   }}
                 >
-                  {story.capabilitiesList.map((capability, idx) => (
+                  <Box
+                    sx={{
+                      position: "relative",
+                      zIndex: 2,
+                      width: "100%",
+                      maxWidth: "550px",
+                      height: { xs: "240px", sm: "300px" },
+                      borderRadius: "20px",
+                      overflow: "hidden",
+                      boxShadow: "0px 25px 55px rgba(0, 0, 0, 0.55)",
+                      mb: 6,
+                      border: "1px solid rgba(255, 255, 255, 0.05)",
+                      "&:hover": { "& img": { transform: "scale(1.03)" } },
+                    }}
+                  >
                     <Box
-                      component="li"
-                      key={idx}
+                      component="img"
+                      src={story.capabilitiesImage}
+                      alt="Core Capabilities"
                       sx={{
-                        color: theme.palette.text.secondary,
-                        fontSize: "0.95rem",
-                        "&::marker": { color: theme.palette.secondary.main },
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        transition: "transform 0.6s ease",
                       }}
-                    >
-                      {capability}
-                    </Box>
-                  ))}
+                    />
+                  </Box>
+
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      color: theme.palette.text.primary,
+                      fontWeight: 800,
+                      mb: 3,
+                      textAlign: "center",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.5px",
+                    }}
+                  >
+                    Core Capabilities
+                  </Typography>
+
+                  <Box
+                    component="ul"
+                    sx={{
+                      p: 0,
+                      m: 0,
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 2,
+                      width: "100%",
+                      maxWidth: "480px",
+                    }}
+                  >
+                    {story.capabilitiesList.map((capability, idx) => (
+                      <Box
+                        component="li"
+                        key={idx}
+                        sx={{
+                          listStyle: "none",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 1.5,
+                          color: theme.palette.text.secondary,
+                          fontSize: "0.95rem",
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        <CheckCircleOutlinedIcon
+                          sx={{
+                            color: theme.palette.secondary.main,
+                            fontSize: "1.2rem",
+                            flexShrink: 0,
+                          }}
+                        />
+                        {capability}
+                      </Box>
+                    ))}
+                  </Box>
                 </Box>
               </Grid>
 
-              {/* Coverage */}
               <Grid size={{ xs: 12, md: 6 }}>
-                <Box
-                  component="img"
-                  src={story.coverageImage}
-                  alt="Coverage"
-                  sx={{
-                    width: "100%",
-                    height: "250px",
-                    objectFit: "cover",
-                    borderRadius: "8px",
-                    mb: 3,
-                    boxShadow: "0px 10px 30px rgba(0,0,0,0.5)",
-                  }}
-                />
-                <Typography
-                  variant="h5"
-                  sx={{
-                    color: theme.palette.text.primary,
-                    fontWeight: 800,
-                    mb: 2.5,
-                    textAlign: "center",
-                  }}
-                >
-                  Coverage
-                </Typography>
                 <Box
                   sx={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: 3,
-                    px: { md: 2 },
+                    alignItems: "center",
+                    height: "100%",
                   }}
                 >
-                  <Box>
-                    <Typography
-                      variant="body1"
+                  <Box
+                    sx={{
+                      position: "relative",
+                      zIndex: 2,
+                      width: "100%",
+                      maxWidth: "550px",
+                      height: { xs: "240px", sm: "300px" },
+                      borderRadius: "20px",
+                      overflow: "hidden",
+                      boxShadow: "0px 25px 55px rgba(0, 0, 0, 0.55)",
+                      mb: 6,
+                      border: "1px solid rgba(255, 255, 255, 0.05)",
+                      "&:hover": { "& img": { transform: "scale(1.03)" } },
+                    }}
+                  >
+                    <Box
+                      component="img"
+                      src={story.coverageImage}
+                      alt="Coverage"
                       sx={{
-                        color: theme.palette.text.primary,
-                        fontWeight: 700,
-                        mb: 0.5,
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        transition: "transform 0.6s ease",
                       }}
-                    >
-                      Primary:
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      sx={{ color: theme.palette.text.secondary }}
-                    >
-                      {story.coverage.primary}
-                    </Typography>
+                    />
                   </Box>
-                  <Box>
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        color: theme.palette.text.primary,
-                        fontWeight: 700,
-                        mb: 0.5,
-                      }}
-                    >
-                      Extended:
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      sx={{ color: theme.palette.text.secondary }}
-                    >
-                      {story.coverage.extended}
-                    </Typography>
-                  </Box>
-                  <Box>
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        color: theme.palette.text.primary,
-                        fontWeight: 700,
-                        mb: 0.5,
-                      }}
-                    >
-                      Facilities:
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      sx={{ color: theme.palette.text.secondary }}
-                    >
-                      {story.coverage.facilities}
-                    </Typography>
+
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      color: theme.palette.text.primary,
+                      fontWeight: 800,
+                      mb: 3,
+                      textAlign: "center",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.5px",
+                    }}
+                  >
+                    Coverage
+                  </Typography>
+
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 2.5,
+                      width: "100%",
+                      maxWidth: "480px",
+                    }}
+                  >
+                    {[
+                      { label: "Primary", value: story.coverage.primary },
+                      { label: "Extended", value: story.coverage.extended },
+                      { label: "Facilities", value: story.coverage.facilities },
+                    ].map((item, index) => (
+                      <Box
+                        key={index}
+                        sx={{
+                          backgroundColor: "rgba(255, 255, 255, 0.02)",
+                          p: 2,
+                          borderRadius: "8px",
+                          borderLeft: `3px solid ${theme.palette.secondary.main}`,
+                          transition: "background-color 0.2s ease",
+                          "&:hover": {
+                            backgroundColor: "rgba(255, 255, 255, 0.04)",
+                          },
+                        }}
+                      >
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            color: theme.palette.secondary.main,
+                            fontWeight: 800,
+                            textTransform: "uppercase",
+                            fontSize: "0.75rem",
+                            mb: 0.5,
+                            letterSpacing: "0.5px",
+                          }}
+                        >
+                          {item.label}
+                        </Typography>
+                        <Typography
+                          variant="body1"
+                          sx={{
+                            color: theme.palette.text.secondary,
+                            fontSize: "0.95rem",
+                            lineHeight: 1.5,
+                          }}
+                        >
+                          {item.value}
+                        </Typography>
+                      </Box>
+                    ))}
                   </Box>
                 </Box>
               </Grid>

@@ -10,6 +10,7 @@ import { Routes, Route } from "react-router-dom";
 import { CustomProvider } from "./contexts/CustomContext";
 import ServiceDetail from "./components/ServiceDetail";
 import DriveForUsDialog from "./components/DriveForUsDialog";
+import CssBaseline from "@mui/material/CssBaseline";
 
 const App = () => {
   const theme = createTheme({
@@ -27,10 +28,14 @@ const App = () => {
         secondary: grey[400],
       },
     },
+    typography: {
+      fontFamily: "'Roboto', sans-serif",
+    },
   });
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <CustomProvider>
           <EstimateDialog />
           <DriveForUsDialog />
