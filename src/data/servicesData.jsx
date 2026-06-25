@@ -13,7 +13,7 @@ export const servicesData = [
       </>
     ),
     icon: PrecisionManufacturingIcon,
-    image: "../public/images/amazon-linehaul.webp",
+    image: "/images/amazon-linehaul.webp",
     alt: "Amazon Linehaul and Intermodal Logistics Freight Trains",
     quote: (
       <>
@@ -39,7 +39,7 @@ export const servicesData = [
       </>
     ),
     icon: DepartureBoardIcon,
-    image: "../public/images/box-trucks.webp",
+    image: "/images/box-trucks.webp",
     alt: "Box Truck Solutions Final Mile Delivery Fleet and Logistics",
     quote: <>Fast. Efficient. Always dependable.</>,
     description: (
@@ -60,7 +60,7 @@ export const servicesData = [
       </>
     ),
     icon: LocalShippingIcon,
-    image: "../public/images/drayage-intermodal.webp",
+    image: "/images/drayage-intermodal.webp",
     alt: "Drayage and Intermodal Port Logistics",
     quote: (
       <>
@@ -88,7 +88,7 @@ export const servicesData = [
       </>
     ),
     icon: RouteIcon,
-    image: "../public/images/otr-dry-van.webp",
+    image: "/images/otr-dry-van.webp",
     alt: "OTR and Regional Dry Van Logistics Truck on Highway",
     quote: (
       <>
@@ -112,7 +112,7 @@ export const servicesData = [
       </>
     ),
     icon: AcUnitIcon,
-    image: "../public/images/reefer-solutions.webp",
+    image: "/images/reefer-solutions.webp",
     alt: "53 Reefer Solutions Temperature Controlled Cargo Semi Truck",
     quote: (
       <>

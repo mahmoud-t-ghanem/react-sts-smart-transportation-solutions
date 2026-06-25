@@ -4,7 +4,6 @@ import Typography from "@mui/material/Typography";
 
 import { useTheme } from "@mui/material/styles";
 import CustomButton from "./CustomButton";
-// import { blueGrey } from "@mui/material/colors";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
@@ -18,7 +17,7 @@ const Hero = () => {
           minHeight: { xs: "70vh", md: "85vh" },
           display: "flex",
           alignItems: "center",
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), url('../public/images/hero.webp')`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), url('/images/hero.webp')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -78,7 +77,6 @@ const Hero = () => {
       <Box
         sx={{
           backgroundColor: theme.palette.primary.main,
-          // backgroundColor: blueGrey[800],
           py: { xs: 8, md: 10 },
           borderTop: "1px solid rgba(255, 255, 255, 0.05)",
           textAlign: "center",
@@ -89,7 +87,6 @@ const Hero = () => {
       >
         <Container maxWidth="md">
           <Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
-            {/* حاوية العنوان والمقاس البرتقالي الموازي */}
             <Box
               sx={{
                 display: "inline-block",
@@ -122,7 +119,6 @@ const Hero = () => {
               />
             </Box>
 
-            {/* 🛠 تم تكبير حجم الخط هنا من 19px إلى 21px في الشاشات الكبيرة */}
             <Typography
               variant="body1"
               sx={{
@@ -151,7 +147,6 @@ const Hero = () => {
               that delivers consistency, accountability, and value.
             </Typography>
 
-            {/* 🛠 تم التكبير هنا أيضاً ليطابق الفقرة السابقة تماماً */}
             <Typography
               variant="body1"
               sx={{

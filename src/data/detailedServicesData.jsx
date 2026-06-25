@@ -13,7 +13,7 @@ export const detailedServicesData = [
       "At STS Smart Transportation Solutions Inc., we move freight with precision from Chicago's rail ramps to destinations across the U.S. Our asset-based drayage and intermodal network is built for reliability, cost efficiency, and real-time control—so your containers stay on schedule and on budget.",
     quote:
       "Why STS for Drayage & Intermodal: When every hour counts, you need a carrier that owns its assets, manages its drivers, and executes with discipline. STS delivers end-to-end visibility, tight ramp scheduling, and equipment control backed by 24/7 dispatch and modern fleet tracking.",
-    image: "../public/images/drayage-intermodal.webp",
+    image: "/images/drayage-intermodal.webp",
     alt: "Drayage and Intermodal Container Services",
     isReefer: false,
     icon: LocalShippingIcon,
@@ -36,7 +36,7 @@ export const detailedServicesData = [
       "Scorecard-driven performance, surge-ready capacity, and 24/7 dispatch built for Amazon Relay. Chicago-based. Nationwide reach. STS supports Amazon middle-mile linehaul (relay, regional, and long-haul) and final-mile support for select markets. We combine asset-based drivers with strict operating playbooks to protect on-time performance and compliance—especially during peak.",
     quote:
       "What We Do: Middle-Mile (Linehaul): scheduled/spot blocks, live-load & drop-and-hook, regional & OTR. Final-Mile Support: box-truck routes, retail/DC shuttles, overflow and surge days. 24/7 Operations: proactive updates, exception handling, and rapid recovery plans.",
-    image: "../public/images/amazon-linehaul.webp",
+    image: "/images/amazon-linehaul.webp",
     alt: "Amazon Linehaul Logistics and Fleet Support",
     isReefer: false,
     icon: PrecisionManufacturingIcon,
@@ -77,7 +77,7 @@ export const detailedServicesData = [
     description:
       "STS delivers regional and long-haul dry van service built on reliability and precision. Our professional drivers and 24/7 dispatch team ensure safe, on-time performance with real-time tracking and proactive communication every mile.",
     quote: "Reliable delivery. Predictable performance.",
-    image: "../public/images/otr-dry-van.webp",
+    image: "/images/otr-dry-van.webp",
     alt: "OTR and Regional Dry Van Trucking Services",
     isReefer: false,
     icon: RouteIcon,
@@ -99,7 +99,7 @@ export const detailedServicesData = [
     description:
       "STS delivers temperature-controlled freight with precision and reliability. Our modern 53’ reefers maintain strict temperature integrity for food, beverage, and perishable cargo — supported by real-time monitoring and 24/7 dispatch oversight.",
     quote: "Controlled temperature. Reliable performance.",
-    image: "../public/images/reefer-solutions.webp",
+    image: "/images/reefer-solutions.webp",
     alt: "53 Foot Reefer Temperature Controlled Trucking Services",
     isReefer: true,
     icon: AcUnitIcon,
@@ -121,7 +121,7 @@ export const detailedServicesData = [
     description:
       "STS provides flexible box truck services for short-haul, final-mile, and regional distribution. Ideal for LTL, retail, and eCommerce deliveries, our fleet ensures quick response times, secure handling, and reliable performance across every route.",
     quote: "Fast. Efficient. Always dependable.",
-    image: "../public/images/box-trucks.webp",
+    image: "/images/box-trucks.webp",
     alt: "Box Truck Solutions and Final Mile Delivery Services",
     isReefer: false,
     icon: DepartureBoardIcon,
