@@ -117,54 +117,6 @@ const InteractiveMap = () => {
         </Box>
       )}
 
-      <Box
-        sx={{
-          position: "absolute",
-          bottom: 24,
-          right: 24,
-          zIndex: 80,
-          display: "flex",
-          flexDirection: "column",
-          gap: 1,
-        }}
-      >
-        <IconButton
-          onClick={handleZoomIn}
-          sx={{
-            backgroundColor: theme.palette.text.primary,
-            color: theme.palette.primary.main,
-            border: "1px solid rgba(0, 0, 0, 0.08)",
-            boxShadow: "0px 4px 12px rgba(0,0,0,0.3)",
-            "&:hover": {
-              backgroundColor: theme.palette.secondary.main,
-              color: theme.palette.text.primary,
-              transform: "scale(1.05)",
-            },
-            transition: "all 0.2s ease",
-          }}
-        >
-          <AddIcon fontSize="small" />
-        </IconButton>
-
-        <IconButton
-          onClick={handleZoomOut}
-          sx={{
-            backgroundColor: theme.palette.text.primary,
-            color: theme.palette.primary.main,
-            border: "1px solid rgba(0, 0, 0, 0.08)",
-            boxShadow: "0px 4px 12px rgba(0,0,0,0.3)",
-            "&:hover": {
-              backgroundColor: theme.palette.secondary.main,
-              color: theme.palette.text.primary,
-              transform: "scale(1.05)",
-            },
-            transition: "all 0.2s ease",
-          }}
-        >
-          <RemoveIcon fontSize="small" />
-        </IconButton>
-      </Box>
-
       <MapContainer
         center={position}
         zoom={zoom}
@@ -199,6 +151,56 @@ const InteractiveMap = () => {
         <ZoomController zoomLevel={zoom} />
         <MapLoadListener onReady={() => setMapLoaded(true)} />
       </MapContainer>
+
+      {mapLoaded && (
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: { xs: 16, md: 24 },
+            right: { xs: 16, md: 24 },
+            zIndex: 1050,
+            display: "flex",
+            flexDirection: "column",
+            gap: 1,
+          }}
+        >
+          <IconButton
+            onClick={handleZoomIn}
+            sx={{
+              backgroundColor: theme.palette.text.primary,
+              color: theme.palette.primary.main,
+              border: "1px solid rgba(0, 0, 0, 0.08)",
+              boxShadow: "0px 4px 12px rgba(0,0,0,0.3)",
+              "&:hover": {
+                backgroundColor: theme.palette.secondary.main,
+                color: theme.palette.text.primary,
+                transform: "scale(1.05)",
+              },
+              transition: "all 0.2s ease",
+            }}
+          >
+            <AddIcon fontSize="small" />
+          </IconButton>
+
+          <IconButton
+            onClick={handleZoomOut}
+            sx={{
+              backgroundColor: theme.palette.text.primary,
+              color: theme.palette.primary.main,
+              border: "1px solid rgba(0, 0, 0, 0.08)",
+              boxShadow: "0px 4px 12px rgba(0,0,0,0.3)",
+              "&:hover": {
+                backgroundColor: theme.palette.secondary.main,
+                color: theme.palette.text.primary,
+                transform: "scale(1.05)",
+              },
+              transition: "all 0.2s ease",
+            }}
+          >
+            <RemoveIcon fontSize="small" />
+          </IconButton>
+        </Box>
+      )}
     </Box>
   );
 };
